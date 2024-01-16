@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>キコエレ</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="kikoere">
+	<main>
+		<!--top-->
+		<section id="cont01">
+			<h1><img src="img/main.jpg" alt="キコエレ Check your ears without a check-up. ※検査の際は音量を半分にしてください"></h1>
+			<!--<h2><img src="img/kikoere.png">キコエレ</h2>
+		  <h1>Check your ears<br>without a check-up.</h1>
+			<p></p>-->
+		</section>
+		
+		<!--diagnesis-->
+		<section id="cont02">
+			<form name="form1" action="">
+				<div class="otoderu">
+					<h2>どの音が聞こえましたか？</h2>
+					<p>ボタンをクリックすると５秒間音が鳴ります</p>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><a onClick="sound()">
+								<img src="img/btn/250hz.png" alt="250hz"></a></p> 
+							<!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
+							<audio id="sound-file" preload="auto">
+								<source src="img/hz/250hz.mp3" type="audio/mp3">
+								<source src="img/hz/250hz.wav" type="audio/wav">
+							</audio>
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox1" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><a onClick="sound2()">
+								<img src="img/btn/500hz.png" alt="250hz"></a></p> 
+							<!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
+							<audio id="sound-file2" preload="auto">
+								<source src="img/hz/500hz.mp3" type="audio/mp3">
+								<source src="img/hz/500hz.wav" type="audio/wav">
+							</audio>
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox2" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><a onClick="sound3()">
+								<img src="img/btn/4000hz.png" alt="250hz"></a></p> 
+							<!-- 音声ファイルの読み込み 9〜10行目にURLを指定 -->
+							<audio id="sound-file3" preload="auto">
+								<source src="img/hz/4000hz.mp3" type="audio/mp3">
+								<source src="img/hz/4000hz.wav" type="audio/wav">
+							</audio>
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox3" class="scales" name="scales" />
+						</div>
+					</div>
+				</div>
+				<div class="text-only">
+					<h2>どのように聞こえましたか？</h2>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q1.jpg" alt="こもった音がする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox4" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q2.jpg" alt="耳鳴りがする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox5" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q3.jpg" alt="めまいがする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox6" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q4.jpg" alt="吐き気がする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox7" class="scales" name="scales" />
+						</div>
+					</div>
+				</div>
+
+				<!--結果を見る-->
+				<div class="look">
+					<!-- テキストボタンの場合 -->
+					<p><a onClick="handleClickButton()">結果を見る</a></p>
+				</div>
+			</form>
+		</section>
+	</main>
+	<!--ボタンを押したら音声再生-->
+	<script src="js/audio.js"></script>
+	<script type="text/javascript" language="javascript">
+	// チェックボックスの状態を取得
+
+	function handleClickButton() {
+		// 各チェックボックスの状態を取得します。チェックが入っていればtrue、入っていなければfalseになります。
+		let check1 = document.form1.Checkbox1.checked; // 250hzの音が聞こえたか
+		let check2 = document.form1.Checkbox2.checked; // 500hzの音が聞こえたか
+		let check3 = document.form1.Checkbox3.checked; // 4000hzの音が聞こえたか
+		let check4 = document.form1.Checkbox4.checked; // こもった音がするか
+		let check5 = document.form1.Checkbox5.checked; // 耳鳴りがするか
+		let check6 = document.form1.Checkbox6.checked; // めまいがするか
+		let check7 = document.form1.Checkbox7.checked; // 吐き気がするか
+
+		// どの音も聞こえない、または、こもった音がする、耳鳴りがする、めまいがする、吐き気がするいずれかの症状がある場合、
+		// 'big.html'にリダイレクトします。
+		if (!(check1 && check2 && check3) || (check4 || check5 || check6 || check7)) {
+		window.location.href = 'big.html';
+		} else {
+		// それ以外の場合、'small.html'にリダイレクトします。
+		window.location.href = 'small.html';
+		}
+  	}
+    </script>
+</body>
+</html>
