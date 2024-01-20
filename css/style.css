@@ -74,7 +74,7 @@
 }
 #kikoere #cont02 .q {
 	max-width: 300px;
-	width: 50%;
+	width: 80%;
 }
 #kikoere #cont02 .otoderu .q img {
 	width: 100%;
@@ -184,29 +184,38 @@ input[type="checkbox"]:checked::after {
     left: 14px;/*チェック時の位置調整*/
   }
 }
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
 	/* 480px以下に適用されるCSS（スマホ用） */
 	
 	/* チェックボックスデザイン */
-	input[type="checkbox"]::before {
+	/*input[type="checkbox"]::before {
 		border: 1px solid #666464;
-		width: 20px;/*チェックボックスの横幅*/
-		height: 20px;/*チェックボックスの縦幅*/
-		transform: translateY(-50%);
+		width: 20px;/* 
+		/*チェックボックスの横幅*/
+		/*height: 20px;/* 
+		/*チェックボックスの縦幅*/
+		/*transform: translateY(-50%);
 		top: 50%;
 		left: 5px;
-	}
-	input[type="checkbox"]::after {
-		border-bottom: 1px solid #666464;/*チェックの太さ*/
-		border-left: 1px solid #666464;/*チェックの太さ*/
-		opacity: 0;/*チェック前は非表示*/
-		height: 4px;/*チェックの高さ*/
-		width: 10px;/*チェックの横幅*/
-		transform: rotate(-45deg);
-		top: -4px;/*チェック時の位置調整*/
-		left: 10px;/*チェック時の位置調整*/
-	}
-}
+	}/* 
+	input[type="checkbox"]::after {/* 
+		border-bottom: 1px solid #666464;/* 
+		/*チェックの太さ*/
+		/*border-left: 1px solid #666464;/* 
+		/*チェックの太さ*/
+		/*opacity: 0;/* 
+		/*チェック前は非表示*/
+		/*height: 4px;/* 
+		/*チェックの高さ*/
+		/*width: 10px;/* 
+		/*チェックの横幅*/
+		/*transform: rotate(-45deg);/* 
+		top: -4px;
+		/*チェック時の位置調整*/
+		/*left: 10px;/* 
+		/*チェック時の位置調整*/
+	/*}/* 
+}/* 
 
 
 /*結果を見る*/
@@ -266,10 +275,25 @@ input[type="checkbox"]:checked::after {
 	margin-right: auto;
 	padding-left: 2%;
 	padding-right: 2%;
-	max-width: 840px;
-	width: 100%;
+	max-width: 800px;
+	width: 90%;
 }
 #kikoere #inner img {
 	width: 100%;
 	pointer-events: none;
+}
+
+#cd {
+	max-width: 800px;
+	width: 100%;
+	font-size: 150px;
+	font-weight: bold;
+	text-align: center;
+}
+@media screen and (max-width: 1065px) {
+	/* 1065px以下に適用されるCSS（タブレット用） */
+	
+	#cd {
+		font-size: calc(100vw / 6);
+	}
 }

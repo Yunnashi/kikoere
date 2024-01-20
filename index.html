@@ -106,6 +106,15 @@
 							<input type="checkbox" id="Checkbox7" class="scales" name="scales" />
 						</div>
 					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q5.jpg" alt="過去にも繰り返し耳の不調を感じたことがある"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox8" class="scales" name="scales" />
+						</div>
+					</div>
 				</div>
 
 				<!--結果を見る-->
@@ -130,10 +139,11 @@
 		let check5 = document.form1.Checkbox5.checked; // 耳鳴りがするか
 		let check6 = document.form1.Checkbox6.checked; // めまいがするか
 		let check7 = document.form1.Checkbox7.checked; // 吐き気がするか
+		let check8 = document.form1.Checkbox8.checked; // 過去にも繰り返し耳の不調を感じたことがあるか
 
 		// どの音も聞こえない、または、こもった音がする、耳鳴りがする、めまいがする、吐き気がするいずれかの症状がある場合、
 		// 'big.html'にリダイレクトします。
-		if (!(check1 && check2 && check3) || (check4 || check5 || check6 || check7)) {
+		if (!(check1 && check2 && check3) || (check4 || check5 || check6 || check7 || check8)) {
 		window.location.href = 'big.html';
 		} else {
 		// それ以外の場合、'small.html'にリダイレクトします。
