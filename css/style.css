@@ -31,6 +31,11 @@
 	margin-top: 8%;
 	line-height: 0;
 }
+#kikoere h2 span {
+	font-size: 24px;
+	font-weight: bold;
+	padding-left: 5%;
+}
 #kikoere #cont02 p{
 	font-size: 24px;
 }
@@ -74,7 +79,7 @@
 }
 #kikoere #cont02 .q {
 	max-width: 300px;
-	width: 80%;
+	width: 90%;
 }
 #kikoere #cont02 .otoderu .q img {
 	width: 100%;
@@ -247,26 +252,15 @@ input[type="checkbox"]:checked::after {
 
 @media screen and (max-width: 959px) {
 	/* 959px以下に適用されるCSS（タブレット用） */
-	
-	#kikoere #cont02 .look a{
+	/*#kikoere #cont02 .look a{
 		padding-top: 10px;
 		padding-bottom: 10px;
 		padding-left: 70px;
 		padding-right: 70px;
 		font-size: 21px;
-	}
+	}*/
 }
-@media screen and (max-width: 480px) {
-	/* 480px以下に適用されるCSS（スマホ用） */
-	
-	#kikoere #cont02 .look a{
-		padding-top: 5px;
-		padding-bottom: 5px;
-		padding-left: 30px;
-		padding-right: 30px;
-		font-size: 14px;
-	}
-}
+
 
 
 /*nextページ*/
@@ -292,8 +286,8 @@ input[type="checkbox"]:checked::after {
 }
 @media screen and (max-width: 1065px) {
 	/* 1065px以下に適用されるCSS（タブレット用） */
-	
 	#cd {
 		font-size: calc(100vw / 6);
 	}
 }
+

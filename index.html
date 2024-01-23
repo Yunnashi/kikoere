@@ -21,7 +21,7 @@
 			<form name="form1" action="">
 				<div class="otoderu">
 					<h2>どの音が聞こえましたか？</h2>
-					<p>ボタンをクリックすると５秒間音が鳴ります</p>
+					<p>ボタンをクリックすると５秒間音が鳴ります。聞こえた音はすべて選択してください。</p>
 					<div class="flex">
 						<div class="q">
 						<!-- テキストボタンの場合 -->
@@ -68,21 +68,21 @@
 						</div>
 					</div>
 				</div>
-				<div class="text-only">
-					<h2>どのように聞こえましたか？</h2>
-					<div class="flex">
-						<div class="q">
-						<!-- テキストボタンの場合 -->
-							<p><img src="img/btn/q1.jpg" alt="こもった音がする"></p> 
-						</div>
-						<div class="c">
-							<input type="checkbox" id="Checkbox4" class="scales" name="scales" />
-						</div>
+				<div class="flex">
+					<div class="q">
+					<!-- テキストボタンの場合 -->
+						<p><img src="img/btn/q21.jpg" alt="どの音も聞こえない"></p> 
 					</div>
+					<div class="c">
+						<input type="checkbox" id="Checkbox4" class="scales" name="scales" />
+					</div>
+				</div>
+				<div class="text-only">
+					<h2>どのように聞こえましたか？<span>複数選択可</span></h2>
 					<div class="flex">
 						<div class="q">
 						<!-- テキストボタンの場合 -->
-							<p><img src="img/btn/q2.jpg" alt="耳鳴りがする"></p> 
+							<p><img src="img/btn/q11.jpg" alt="こもった音がする"></p> 
 						</div>
 						<div class="c">
 							<input type="checkbox" id="Checkbox5" class="scales" name="scales" />
@@ -91,7 +91,7 @@
 					<div class="flex">
 						<div class="q">
 						<!-- テキストボタンの場合 -->
-							<p><img src="img/btn/q3.jpg" alt="めまいがする"></p> 
+							<p><img src="img/btn/q2.jpg" alt="音が二重にきこえる"></p> 
 						</div>
 						<div class="c">
 							<input type="checkbox" id="Checkbox6" class="scales" name="scales" />
@@ -100,7 +100,7 @@
 					<div class="flex">
 						<div class="q">
 						<!-- テキストボタンの場合 -->
-							<p><img src="img/btn/q4.jpg" alt="吐き気がする"></p> 
+							<p><img src="img/btn/q3.jpg" alt="片耳からのみしか聞こえない"></p> 
 						</div>
 						<div class="c">
 							<input type="checkbox" id="Checkbox7" class="scales" name="scales" />
@@ -109,10 +109,58 @@
 					<div class="flex">
 						<div class="q">
 						<!-- テキストボタンの場合 -->
-							<p><img src="img/btn/q5.jpg" alt="過去にも繰り返し耳の不調を感じたことがある"></p> 
+							<p><img src="img/btn/q14.jpg" alt="特に症状はない"></p> 
 						</div>
 						<div class="c">
 							<input type="checkbox" id="Checkbox8" class="scales" name="scales" />
+						</div>
+					</div>
+				</div>
+				<div class="text-only">
+					<h2>他にどんな症状がありますか？<span>複数選択可</span></h2>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q1.jpg" alt="耳鳴りがする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox9" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q2.jpg" alt="めまいがする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox10" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q3.jpg" alt="吐き気がする"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox11" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q5.jpg" alt="過去にも繰り返し耳の不調を感じたことがある"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox12" class="scales" name="scales" />
+						</div>
+					</div>
+					<div class="flex">
+						<div class="q">
+						<!-- テキストボタンの場合 -->
+							<p><img src="img/btn/q14.jpg" alt="特に症状はない"></p> 
+						</div>
+						<div class="c">
+							<input type="checkbox" id="Checkbox13" class="scales" name="scales" />
 						</div>
 					</div>
 				</div>
@@ -135,15 +183,20 @@
 		let check1 = document.form1.Checkbox1.checked; // 250hzの音が聞こえたか
 		let check2 = document.form1.Checkbox2.checked; // 500hzの音が聞こえたか
 		let check3 = document.form1.Checkbox3.checked; // 4000hzの音が聞こえたか
-		let check4 = document.form1.Checkbox4.checked; // こもった音がするか
-		let check5 = document.form1.Checkbox5.checked; // 耳鳴りがするか
-		let check6 = document.form1.Checkbox6.checked; // めまいがするか
-		let check7 = document.form1.Checkbox7.checked; // 吐き気がするか
-		let check8 = document.form1.Checkbox8.checked; // 過去にも繰り返し耳の不調を感じたことがあるか
+		let check4 = document.form1.Checkbox4.checked; // どの音も聞こえないか
+		let check5 = document.form1.Checkbox5.checked; // こもった音がするか
+		let check6 = document.form1.Checkbox6.checked; // 音が二重に聞こえるか
+		let check7 = document.form1.Checkbox7.checked; // かた耳からのみしか聞こえないか
+		let check8 = document.form1.Checkbox8.checked; // 特に症状はないか
+		let check9 = document.form1.Checkbox9.checked; // 耳鳴りがするか
+		let check10 = document.form1.Checkbox10.checked; // めまいがするか
+		let check11 = document.form1.Checkbox11.checked; // 吐き気がするか
+		let check12 = document.form1.Checkbox12.checked; // 過去にも繰り返し耳の不調を感じたことがあるか
+		let check13 = document.form1.Checkbox13.checked; // 特に症状はないか
 
 		// どの音も聞こえない、または、こもった音がする、耳鳴りがする、めまいがする、吐き気がするいずれかの症状がある場合、
 		// 'big.html'にリダイレクトします。
-		if (!(check1 && check2 && check3) || (check4 || check5 || check6 || check7 || check8)) {
+		if (!(check1 && check2 && check3) || (check4 || check5 || check6 || check7 || check9 || check10 || check11 || check12)) {
 		window.location.href = 'big.html';
 		} else {
 		// それ以外の場合、'small.html'にリダイレクトします。
